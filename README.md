@@ -1,1 +1,4 @@
-# react-patterns
+```
+yarn install
+yarn start
+```
