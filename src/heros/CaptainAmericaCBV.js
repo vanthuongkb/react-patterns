@@ -39,7 +39,7 @@ export default class CaptainAmericaContainer extends Component {
     );
 
     restore();
-  }
+  };
 
   render() {
     return (<HeroBranch {...this.state}/>);

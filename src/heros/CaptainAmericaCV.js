@@ -48,7 +48,7 @@ export default class CaptainAmericaContainer extends PureComponent {
     );
 
     restore();
-  }
+  };
 
   render() {
     return (<CaptainAmericaView {...this.state}/>);

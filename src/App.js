@@ -89,17 +89,17 @@ class App extends Component {
 
 // ================================
 // 6. Component Injection Pattern
-
+//
 // import CaptainAmerica from './heros/CaptainAmericaContainer';
 // // import SpiderMan from './heros/SpiderManContainer';
-
+//
 // import FetchHero from './heros/FetchHeroCI';
-
+//
 // class App extends Component {
 //   render() {
 //     return (
 //       <div className="App">
-//         <FetchHero Hero={SpiderMan} />
+//         <FetchHero Hero={CaptainAmerica} />
 //       </div>
 //     );
 //   }

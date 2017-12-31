@@ -1,32 +1,25 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-export default class HeroView extends PureComponent {
-  renderLoading() {
-    return <div>Loading....</div>
-  };
+const LoadingView = () => (<div>Loading....</div>);
 
-  renderError() {
-    return <div>Sorry! Please try again.</div>
+const ErrorView = () => (<div>Sorry! Please try again.</div>);
+
+const HeroView = ({ id, name, publisher }) => (
+  <div>
+    <div>ID: {id}</div>
+    <div>Name: {name}</div>
+    <div>Publisher: {publisher}</div>
+  </div>
+);
+
+const HeroBranch = ({ loading, hero }) => {
+  if (loading) {
+    return <LoadingView/>;
+  } else if (hero) {
+    return <HeroView {...hero} />;
+  } else {
+    return <ErrorView/>;
   }
+};
 
-  renderHero() {
-    const { hero: { id, name, publisher } } = this.props;
-    return (
-      <div>
-        <div>ID: {id}</div>
-        <div>Name: <strong>{name}</strong></div>
-        <div>Publisher: {publisher}</div>
-      </div>
-    )
-  }
-
-  render() {
-    if (this.props.loading) {
-      return this.renderLoading();
-    } else if (this.props.hero) {
-      return this.renderHero();
-    } else {
-      return this.renderError();
-    }
-  }
-}
+export default HeroBranch;
