@@ -11,12 +11,17 @@ export default class CaptainAmerica extends PureComponent {
   state = { loading: true };
 
   componentDidMount() {
-    fetch('http://localhost:8080/api/heros/1')
-      .then(res => res.json())
-      .then(
-        hero => this.setState({ loading: false, hero }),
-        error => this.setState({ loading: false, error }),
-      );
+    this.fetchHero(1);
+  }
+
+  fetchHero = (heroId) => {
+    fetch(`http://localhost:8080/api/heros/${heroId}`)
+    .then(res => res.json())
+    .then(
+      hero => this.setState({ loading: false, hero }),
+      error => this.setState({ loading: false, error }),
+    );
+
     restore();
   }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // 1. Vanilla Pattern
 // import CaptainAmerica from './heros/CaptainAmerica';
-//
+
 // class App extends Component {
 //   render() {
 //     return (
@@ -17,7 +17,7 @@ import React, { Component } from 'react';
 // 2. Container / View Pattern
 //
 // import CaptainAmerica from './heros/CaptainAmericaCV';
-//
+
 // class App extends Component {
 //   render() {
 //     return (
@@ -27,14 +27,13 @@ import React, { Component } from 'react';
 //     );
 //   }
 // }
-// export default App;
 
 
 // ================================
 // 3. Container / Branch / View Pattern
 
 // import CaptainAmerica from './heros/CaptainAmericaCBV';
-//
+
 // class App extends Component {
 //   render() {
 //     return (
@@ -48,25 +47,13 @@ import React, { Component } from 'react';
 // ================================
 // 4. Higher Order Component Pattern
 //
-// import HeroView from './heros/HeroView';
-// import withCA from './heros/withCA';
-// import withSpiderMan from './heros/withSpiderMan';
-// import withBug from './heros/withBug';
-//
-// const HeroWithCA = withCA(HeroView);
-// const HeroWithSpiderMan = withSpiderMan(HeroView);
-//
-// const CaptainAmericaWithBug = withCA(withBug(HeroView));
-//
+// import CaptainAmerica from './heros/CaptainAmericaContainer';
+
 // class App extends Component {
 //   render() {
 //     return (
 //       <div className="App">
-//         <HeroWithCA />
-//         <hr/>
-//         <HeroWithSpiderMan />
-//         <hr/>
-//         <CaptainAmericaWithBug />
+//         <CaptainAmerica heroId={2} />
 //       </div>
 //     );
 //   }
@@ -78,12 +65,13 @@ import React, { Component } from 'react';
 //
 // import HeroView from './heros/HeroView';
 // import CaptainAmerica from './heros/CaptainAmericaRP';
-//
+
 // class App extends Component {
 //   render() {
 //     return (
 //       <div className="App">
 //         <CaptainAmerica
+//           heroId={2}
 //           render={hero => (<HeroView {...hero} />)}
 //         />
 //       </div>
@@ -97,7 +85,7 @@ import React, { Component } from 'react';
 
 // ================================
 // 6. Component Injection Pattern
-//
+
 import HeroView from './heros/HeroView';
 import CaptainAmerica from './heros/CaptainAmericaCI';
 
@@ -105,7 +93,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CaptainAmerica HeroView={HeroView} />
+        <CaptainAmerica heroId={2} HeroView={HeroView} />
       </div>
     );
   }

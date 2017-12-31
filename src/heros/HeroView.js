@@ -14,7 +14,7 @@ export default class HeroView extends PureComponent {
     return (
       <div>
         <div>ID: {id}</div>
-        <div>Name: {name}</div>
+        <div>Name: <strong>{name}</strong></div>
         <div>Publisher: {publisher}</div>
       </div>
     )

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { fetch, restore } from '../utils/fetchApi';
 
-class HeroView extends PureComponent {
+class CaptainAmericaView extends PureComponent {
   renderLoading() {
     return <div>Loading....</div>
   };
@@ -36,16 +36,21 @@ export default class CaptainAmericaContainer extends PureComponent {
   state = { loading: true };
 
   componentDidMount() {
-    fetch('http://localhost:8080/api/heros/1')
-      .then(res => res.json())
-      .then(
-        hero => this.setState({ loading: false, hero }),
-        error => this.setState({ loading: false, error }),
-      );
+    this.fetchHero(1);
+  }
+
+  fetchHero = (heroId) => {
+    fetch(`http://localhost:8080/api/heros/${heroId}`)
+    .then(res => res.json())
+    .then(
+      hero => this.setState({ loading: false, hero }),
+      error => this.setState({ loading: false, error }),
+    );
+
     restore();
   }
 
   render() {
-    return (<HeroView {...this.state}/>);
+    return (<CaptainAmericaView {...this.state}/>);
   }
 }
