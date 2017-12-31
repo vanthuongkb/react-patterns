@@ -1,7 +1,7 @@
 import React from "react";
 import { fetch, restore } from '../utils/fetchApi';
 
-export default class Hero extends React.Component {
+export default class FetchHero extends React.Component {
   state = { loading: true };
 
   fetchHero = (heroId) => {
