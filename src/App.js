@@ -15,19 +15,19 @@ import React, { Component } from 'react';
 
 // ================================
 // 2. Container / View Pattern
-
-import CaptainAmerica from './heros/CaptainAmericaCV';
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <CaptainAmerica />
-      </div>
-    );
-  }
-}
-export default App;
+//
+// import CaptainAmerica from './heros/CaptainAmericaCV';
+//
+// class App extends Component {
+//   render() {
+//     return (
+//       <div className="App">
+//         <CaptainAmerica />
+//       </div>
+//     );
+//   }
+// }
+// export default App;
 
 
 // ================================
@@ -94,3 +94,21 @@ export default App;
 // NOTE:
 // 1. Func as children component is the same concept with render prop
 // 2. Libraries use this pattern: React Router, React Motion,....
+
+// ================================
+// 6. Component Injection Pattern
+//
+import HeroView from './heros/HeroView';
+import CaptainAmerica from './heros/CaptainAmericaCI';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <CaptainAmerica HeroView={HeroView} />
+      </div>
+    );
+  }
+}
+
+export default App;
