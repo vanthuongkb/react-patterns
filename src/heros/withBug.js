@@ -5,7 +5,7 @@ const withBug = (Component) =>
     // Do some works here!!!
 
     render() {
-      return (<Component {...this.props} hero="I am a bug" />);
+      return (<Component {...this.props} fetchHero="I am a bug" />);
     }
   };
 

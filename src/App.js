@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
 // 1. Vanilla Pattern
-// import CaptainAmerica from './heros/CaptainAmerica';
+import CaptainAmerica from './heros/CaptainAmerica';
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <CaptainAmerica />
-//       </div>
-//     );
-//   }
-// }
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <CaptainAmerica />
+      </div>
+    );
+  }
+}
 
 // ================================
 // 2. Container / View Pattern
@@ -48,12 +48,16 @@ import React, { Component } from 'react';
 // 4. Higher Order Component Pattern
 //
 // import CaptainAmerica from './heros/CaptainAmericaContainer';
+// import withHero from './heros/withHero';
+// // import withBug from './heros/withBug';
+
+// const CAWithHero = withHero(CaptainAmerica);
 
 // class App extends Component {
 //   render() {
 //     return (
 //       <div className="App">
-//         <CaptainAmerica heroId={2} />
+//         <CAWithHero />
 //       </div>
 //     );
 //   }
@@ -62,17 +66,17 @@ import React, { Component } from 'react';
 
 // ================================
 // 5. Render Prop Pattern
-//
-// import HeroView from './heros/HeroView';
-// import CaptainAmerica from './heros/CaptainAmericaRP';
+
+// import FetchHero from './heros/FetchHero';
+// import CaptainAmerica from './heros/CaptainAmericaContainer';
 
 // class App extends Component {
 //   render() {
 //     return (
 //       <div className="App">
-//         <CaptainAmerica
-//           heroId={2}
-//           render={hero => (<HeroView {...hero} />)}
+//         <FetchHero render={heroProps => (
+//             <CaptainAmerica {...heroProps} />
+//           )}
 //         />
 //       </div>
 //     );
@@ -86,17 +90,19 @@ import React, { Component } from 'react';
 // ================================
 // 6. Component Injection Pattern
 
-import HeroView from './heros/HeroView';
-import CaptainAmerica from './heros/CaptainAmericaCI';
+// import CaptainAmerica from './heros/CaptainAmericaContainer';
+// // import SpiderMan from './heros/SpiderManContainer';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <CaptainAmerica heroId={2} HeroView={HeroView} />
-      </div>
-    );
-  }
-}
+// import FetchHero from './heros/FetchHeroCI';
+
+// class App extends Component {
+//   render() {
+//     return (
+//       <div className="App">
+//         <FetchHero Hero={SpiderMan} />
+//       </div>
+//     );
+//   }
+// }
 
 export default App;

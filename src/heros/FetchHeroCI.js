@@ -1,7 +1,7 @@
 import React from "react";
 import { fetch, restore } from '../utils/fetchApi';
 
-export default class CaptainAmerica extends React.Component {
+export default class HeroCI extends React.Component {
   state = { loading: true };
 
   componentDidMount() {
@@ -20,6 +20,7 @@ export default class CaptainAmerica extends React.Component {
   }
 
   render() {
-    return this.props.render(this.state);
+    const { Hero } = this.props;
+    return <Hero {...this.state} fetchHero={this.fetchHero} />;
   }
 }

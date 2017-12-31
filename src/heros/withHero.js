@@ -5,10 +5,6 @@ const withHero = (HeroViewComponent) =>
   class extends React.Component {
     state = { loading: true };
 
-    componentDidMount() {
-      this.fetchHero(this.props.heroId);
-    }
-
     fetchHero = (heroId) => {
       fetch(`http://localhost:8080/api/heros/${heroId}`)
       .then(res => res.json())
@@ -21,7 +17,12 @@ const withHero = (HeroViewComponent) =>
     }
 
     render() {
-      return (<HeroViewComponent {...this.props} {...this.state}/>);
+      return (
+      <HeroViewComponent
+        {...this.props}
+        {...this.state}
+        fetchHero={this.fetchHero}
+      />);
     }
   };
 

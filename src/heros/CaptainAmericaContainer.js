@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import withHero from './withHero';
-// import withBug from './withBug';
 import HeroView from './HeroView';
 
 class CaptainAmericaContainer extends Component {
-  // Do a stuff here
+  componentDidMount() {
+    this.props.fetchHero(1);
+  }
 
   render() {
+    const { loading, hero } = this.props;
+
     return (
-      <HeroView {...this.props}/>
+      <HeroView loading={loading} hero={hero} />
     );
   }
 }
 
-const CAWithHero = withHero(CaptainAmericaContainer);
 
-// const CaptainAmericaWithBug = withHero(withBug(HeroView));
-
-export default CAWithHero;
+export default CaptainAmericaContainer;

@@ -1,12 +1,8 @@
 import React from "react";
 import { fetch, restore } from '../utils/fetchApi';
 
-export default class CaptainAmericaComponentInjection extends React.Component {
+export default class Hero extends React.Component {
   state = { loading: true };
-
-  componentDidMount() {
-    this.fetchHero(this.props.heroId);
-  }
 
   fetchHero = (heroId) => {
     fetch(`http://localhost:8080/api/heros/${heroId}`)
@@ -20,7 +16,6 @@ export default class CaptainAmericaComponentInjection extends React.Component {
   }
 
   render() {
-    const { HeroView } = this.props;
-    return <HeroView {...this.state} />;
+    return this.props.render({ ...this.state, fetchHero: this.fetchHero });
   }
 }
